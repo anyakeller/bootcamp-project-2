@@ -8,7 +8,7 @@ module.exports = function(app) {
     // "/api/parents" for the database of parents
     // GET - gets parents
     // POST - adds parents from form
-    // "/IDKHELP" for the secure login for admins
+    // "/authenticateAdmin" for the secure login for admins
     // GET - for verifying login
     // POST - for creating account
 
