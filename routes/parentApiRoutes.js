@@ -18,9 +18,9 @@ module.exports = function(app) {
     // Here we add an "include" property to our options in our findAll query
     // We set the value to an array of the models we want to include in a left outer join
     // In this case, just db.Post
-    db.Child.findAll({
-      include: [db.Parent]
-    }).then(function(dbParent) {
+    db.Parent.findAll(
+			{include: [db.Child]}
+		).then(function(dbParent) {
       JSON.stringify(dbParent, null, 2);
       res.json(dbParent);
     });
@@ -32,17 +32,17 @@ module.exports = function(app) {
     // In this case, just db.Post
     db.Parent.findOne({
       where: {id: req.params.id},
-      include: [db.Parent]
+      include: [db.Child]
     }).then(function(dbParent) {
-      db.Child.getPosts().then(d => console.log('\n\n\n\n', d));
+      db.Child.getChildren().then(d => console.log('\n\n\n\n', d));
       res.json(dbParent);
     });
   });
 
   app.post('/api/Parent', function(req, res) {
-    db.Parent.create(req.body).then(function(dbParent) {
-      console.log(dbParent);
-      res.json(dbParent);
+    db.Parent.create(req.body).then(function(dbParent) { 
+			console.log(dbParent);
+			res.json(dbParent);
     });
   });
   app.delete('/api/Parent/:id', function(req, res) {
