@@ -4,7 +4,7 @@ module.exports = function(sequelize, DataTypes) {
     name_last: DataTypes.STRING,
   });
   Parent.associate = function(models) {
-    Parent.hadMany(models.Child, {
+    Parent.hasMany(models.Child, {
       onDelete: 'cascade',
     });
   };

@@ -1,0 +1,144 @@
+<div id="home">
+  <div class="container">
+    <div class="row">
+      <div class="col-8 offset-2">
+        <h2>test page for adding things to the db</h2>
+        <form class="clearfix mb-4" action="POST" id="addParent">
+          <div class="form-group">
+            <label for="name_first">First Name</label>
+            <input
+              type="text"
+              id="name-first"
+              class="form-control"
+              aria-describedby="name_first"
+              placeholder="Bob"
+            />
+          </div>
+          <div class="form-group">
+            <label for="name_last">Last Name</label>
+            <input
+              type="text"
+              id="name-last"
+              class="form-control"
+              aria-describedby="name_last"
+              placeholder="Ross"
+            />
+          </div>
+
+          <button id="submit" class="btn btn-primary float-right">
+            Submit
+          </button>
+        </form>
+        <h3>Generate Parents</h3>
+        <button class="btn btn-primary" id="genparents">GenParent</button>
+
+        <h3>Generate Kids</h3>
+        <button class="btn btn-primary" id="genkids">GenKids</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+></script>
+<script>
+  $('#addParent').on('submit', function() {
+    event.preventDefault();
+    var parent = {
+      name_first: $('#name-first')
+        .val()
+        .trim(),
+      name_last: $('#name-last')
+        .val()
+        .trim()
+    };
+  });
+  //button to auto gen parents
+  $('#genparents').on('click', function() {
+    var parent = {
+      name_first: 'Boris',
+      name_last: 'poop'
+    };
+    console.log(parent);
+    addParentFunc(parent);
+  });
+  //helper to post parent
+  function addParentFunc(parent) {
+    $.post('/api/Parent', parent).then(function() {
+      console.log('parent added');
+    });
+  }
+
+  // button to auto gen kids
+  $('#genkids').on('click', function() {
+    var child = {
+      name_first: 'Fred',
+      name_last: 'poop',
+      ParentId: 1,
+      age: 3,
+      gender: 'F',
+      allergies: 'NONE',
+      dietRestrictions: 'NONE',
+      notes:
+        'sometimes she really wants attention and sometimes she just wants to be a potato alone'
+    };
+    //console.log(child);
+    //addChildFunc(child);
+
+    var kids = [
+      {
+        ParentId: 1,
+        name_first: 'Anya',
+        name_last: 'Keller',
+        age: 3,
+        gender: 'F',
+        allergies: 'NONE',
+        dietRestrictions: 'NONE',
+        notes:
+          'sometimes she really wants attention and sometimes she just wants to be a potato alone'
+      },
+      {
+        ParentId: 1,
+        name_first: 'Art',
+        name_last: 'Petrosyan',
+        age: 16,
+        gender: 'M',
+        allergies: 'n/a',
+        dietRestrictions: 'n/a',
+        notes: 'Pretty chill dude at first but actually will roast you'
+      },
+      {
+        ParentId: 2,
+        name_first: 'Martha',
+        name_last: 'Stewart',
+        age: 86,
+        gender: 'M',
+        allergies: 'n/a',
+        dietRestrictions: 'n/a',
+        notes:
+          'You would have thought she had a cooking show but really shes an 86 year old dude named Derek'
+      },
+      {
+        ParentId: 3,
+        name_first: 'Rich',
+        name_last: 'Gayle',
+        age: 24,
+        gender: 'M',
+        allergies: 'n/a',
+        dietRestrictions: 'n/a',
+        notes:
+          'Will suddenly implode and become reborn from the ashes of his enemies'
+      }
+    ];
+    addChildFunc(kids[0]);
+  });
+  //add child helper
+  function addChildFunc(child) {
+    console.log(child);
+    $.post('/api/Child', child).then(function() {
+      console.log('child added');
+    });
+  }
+</script>

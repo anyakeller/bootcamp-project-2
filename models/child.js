@@ -6,11 +6,11 @@ module.exports = function(sequelize, DataTypes) {
     gender: DataTypes.STRING,
     allergies: DataTypes.TEXT,
     dietRestrictions: DataTypes.TEXT,
-    notes: DataTypes.TEXT,
+    notes: DataTypes.TEXT
   });
   Child.associate = function(models) {
     Child.belongsTo(models.Parent, {
-      foreignKey: {allowNull: false},
+			foreignKey: {allowNull: true,defaultValue:0}
     });
   };
 
