@@ -4,7 +4,7 @@
       <div class="card mt-4">
         <div class="card-body">
           <h5 class="card-title">Parents Form</h5>
-          <form id="addParent">
+          <form id="addParent" method="post" action="/api/parent">
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="name-first">First Name</label>
@@ -34,33 +34,5 @@
   type="text/javascript"
   src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
 ></script><script>
-  /// Add a New Parent
-$('#addParent').on('submit', function () {
-  event.preventDefault();
-  var parent = {
-    name_first: $('#name-first')
-      .val()
-      .trim(),
-    name_last: $('#name-last')
-      .val()
-      .trim(),
-    address: $('#address')
-      .val()
-      .trim(),
-    phone: $('#phone')
-      .val()
-      .trim(),
-    email: $('#email')
-      .val()
-      .trim()
-  };
-  addParentFunc(parent);
-});
 
-//helper to post parent
-function addParentFunc(parent) {
-  $.post('/api/Parent', parent).then(function () {
-    console.log('parent added');
-  });
-}
 </script>

@@ -23,10 +23,12 @@ module.exports = function(app) {
 
   app.post('/api/Parent', function(req, res) {
     db.Parent.create(req.body).then(function(dbParent) { 
-			console.log(dbParent);
-			res.json(dbParent);
+      //console.log(dbParent);
+      //res.json(dbParent);
+      res.render("newchild",{pid: dbParent.id});
     });
-  });
+  })
+
   app.delete('/api/Parent/:id', function(req, res) {
     db.Parent.destroy({
       where: {

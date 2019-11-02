@@ -43,7 +43,7 @@
   $('#addChild').on('submit', function () {
     event.preventDefault();
     var child = {
-      ParentId: 1,
+      ParentId: {{pid}}, //set parent id to the recieved parent id from the previous page
       name_first: $('#child-name-first')
         .val()
         .trim(),
@@ -74,5 +74,6 @@
     $.post('/api/child', child).then(function () {
       console.log('child added');
     });
+    //prepare to send user to date selection page that doesn't exist yet (you can make it if you wanna ;)
   }
 </script>
