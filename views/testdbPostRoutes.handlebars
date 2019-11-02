@@ -29,7 +29,7 @@
             Submit
           </button>
         </form>
-				<h4>MUST CLICK GEN PARENTS FIRST </h4>
+        <h4>MUST CLICK GEN PARENTS FIRST</h4>
         <h3>Generate Parents</h3>
         <button class="btn btn-primary" id="genparents">GenParent</button>
         <h3>Generate Kids</h3>
@@ -54,23 +54,19 @@
         .val()
         .trim()
     };
-		addParentFunc(parent);
+    addParentFunc(parent);
   });
   //button to auto gen parents
   $('#genparents').on('click', function() {
-    var parents = [{
-      name_first: 'Boris',
-      name_last: 'poop' 
-		},
-			{name_first:"freddy",
-			name_last:"mars"},
-			{name_first: "frank",
-			name_last:"ferter"}
-		];
+    var parents = [
+      {name_first: 'Boris', name_last: 'poop',phone:"2123335858"},
+      {name_first: 'freddy', name_last: 'mars',phone:"3214567890"},
+      {name_first: 'frank', name_last: 'ferter',phone:"2345437777"}
+    ];
     console.log(parents);
-		for (var i = 0 ;i <parents.length;i++){
-    addParentFunc(parents[i]);
-		}
+    for (var i = 0; i < parents.length; i++) {
+      addParentFunc(parents[i]);
+    }
   });
   //helper to post parent
   function addParentFunc(parent) {
@@ -140,9 +136,9 @@
           'Will suddenly implode and become reborn from the ashes of his enemies'
       }
     ];
-		for (var i = 0;i<kids.length;i++){
-    addChildFunc(kids[i]);
-		}
+    for (var i = 0; i < kids.length; i++) {
+      addChildFunc(kids[i]);
+    }
   });
   //add child helper
   function addChildFunc(child) {
