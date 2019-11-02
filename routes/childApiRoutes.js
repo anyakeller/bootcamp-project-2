@@ -18,15 +18,14 @@ module.exports = function(app) {
     // Here we add an "include" property to our options in our findAll query
     // We set the value to an array of the models we want to include in a left outer join
     // In this case, just db.Post
-		res.json(getAllChildren());
-  });
-	function getAllChildren(){
-	    db.Child.findAll({
+    db.Child.findAll({
       include: [db.Parent]
     }).then(function(dbChild) {
       JSON.stringify(dbChild);
-			return dbChild;
-    });}
+			res.json(dbChild);
+    });
+  });
+
 
   app.post('/api/child', function(req, res) {
     db.Child.create(req.body).then(function(dbChild) {
