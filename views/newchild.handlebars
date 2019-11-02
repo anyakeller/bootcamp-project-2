@@ -1,0 +1,78 @@
+<div class="container">
+  <div class="row">
+    <div class="col-8 offset-2">
+      <div class="card mt-4">
+        <div class="card-body">
+          <h5 class="card-title">Child Form</h5>
+          <form id="addChild">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="name-first">First Name</label>
+                <input type="text" class="form-control" id="child-name-first" placeholder="First">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="name-first">Last Name</label>
+                <input type="text" class="form-control" id="child-name-last" placeholder="Last">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="address">Age</label>
+              <input type="text" class="form-control" id="age" placeholder="age">
+              <label for="gender">Gender</label>
+              <input type="text" class="form-control" id="gender" placeholder="gender">
+              <label for="diet">Allergies</label>
+              <input type="text" class="form-control" id="allergies" placeholder="none">
+              <label for="diet">Diet Restrictions</label>
+              <input type="text" class="form-control" id="dietRestrictions" placeholder="none">
+              <label for="diet">Notes</label>
+              <input type="text" class="form-control" id="notes" placeholder="notes">
+            </div>
+            <button type="submit" class="btn btn-primary">Register</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+  //// Add a New Child
+
+  $('#addChild').on('submit', function () {
+    event.preventDefault();
+    var child = {
+      ParentId: 1,
+      name_first: $('#child-name-first')
+        .val()
+        .trim(),
+      name_last: $('#child-name-last')
+        .val()
+        .trim(),
+      age: $('#age')
+        .val()
+        .trim(),
+      gender: $('#gender')
+        .val()
+        .trim(),
+      allergies: $('#allergies')
+        .val()
+        .trim(),
+      dietRestrictions: $('#dietRestrictions')
+        .val()
+        .trim(),
+      notes: $('#notes')
+        .val()
+        .trim()
+    };
+    addChildFunc(child);
+  });
+
+  //helper to post child
+  function addChildFunc(child) {
+    $.post('/api/child', child).then(function () {
+      console.log('child added');
+    });
+  }
+</script>
