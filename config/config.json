@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "password",
+    "password": "Khoranlooso!321",
     "database": "exampledb",
     "host": "localhost",
     "port": 3306,
@@ -9,7 +9,7 @@
   },
   "test": {
     "username": "root",
-    "password": "password",
+    "password": "Khoranlooso!321",
     "database": "testdb",
     "host": "localhost",
     "port": 3306,
