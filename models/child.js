@@ -6,7 +6,9 @@ module.exports = function(sequelize, DataTypes) {
     gender: DataTypes.STRING,
     allergies: DataTypes.TEXT,
     dietRestrictions: DataTypes.TEXT,
-    notes: DataTypes.TEXT
+    notes: DataTypes.TEXT,
+		photoLink:DataTypes.STRING,
+		signedUpDates: DataTypes.ARRAY(DataTypes.DATEONLY)
   });
   Child.associate = function(models) {
     Child.belongsTo(models.Parent, {
