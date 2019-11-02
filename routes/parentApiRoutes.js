@@ -15,26 +15,21 @@ module.exports = function(app) {
   // Get all examples
 
   app.get('/api/Parent', function(req, res) {
-    // Here we add an "include" property to our options in our findAll query
-    // We set the value to an array of the models we want to include in a left outer join
-    // In this case, just db.Post
+ 
     db.Parent.findAll(
 			{include: [db.Child]}
 		).then(function(dbParent) {
-      JSON.stringify(dbParent, null, 2);
+    /*  JSON.stringify(dbParent, null, 2);*/
       res.json(dbParent);
     });
   });
 
   app.get('/api/Parent/:id', function(req, res) {
-    // Here we add an "include" property to our options in our findOne query
-    // We set the value to an array of the models we want to include in a left outer join
-    // In this case, just db.Post
+  
     db.Parent.findOne({
       where: {id: req.params.id},
       include: [db.Child]
     }).then(function(dbParent) {
-      db.Child.getChildren().then(d => console.log('\n\n\n\n', d));
       res.json(dbParent);
     });
   });
@@ -45,6 +40,7 @@ module.exports = function(app) {
 			res.json(dbParent);
     });
   });
+
   app.delete('/api/Parent/:id', function(req, res) {
     db.Parent.destroy({
       where: {
