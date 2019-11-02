@@ -15,17 +15,15 @@ module.exports = function(app) {
   // Get all examples
 
   app.get('/api/Parent', function(req, res) {
- 
-    db.Parent.findAll(
-			{include: [db.Child]}
-		).then(function(dbParent) {
-    /*  JSON.stringify(dbParent, null, 2);*/
+    db.Parent.findAll({
+      include: [db.Child]
+    }).then(function(dbParent) {
+      JSON.stringify(dbParent);
       res.json(dbParent);
     });
   });
 
   app.get('/api/Parent/:id', function(req, res) {
-  
     db.Parent.findOne({
       where: {id: req.params.id},
       include: [db.Child]
@@ -35,9 +33,9 @@ module.exports = function(app) {
   });
 
   app.post('/api/Parent', function(req, res) {
-    db.Parent.create(req.body).then(function(dbParent) { 
-			console.log(dbParent);
-			res.json(dbParent);
+    db.Parent.create(req.body).then(function(dbParent) {
+      console.log(dbParent);
+      res.json(dbParent);
     });
   });
 

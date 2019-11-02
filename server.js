@@ -21,8 +21,6 @@ app.engine(
 app.set("view engine", "handlebars");
 
 // Routes
-require("./routes/childApiRoutes")(app);
-require("./routes/parentApiRoutes")(app);
 require("./routes/htmlRoutes")(app);
 
 var syncOptions = { force: false };
