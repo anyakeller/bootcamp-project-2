@@ -4,24 +4,24 @@
       <div class="card mt-4">
         <div class="card-body">
           <h5 class="card-title">Parents Form</h5>
-          <form id="addParent" method="post" action="/api/parent">
+          <form id="addParent" method="post" action="/api/Parent">
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="name-first">First Name</label>
-                <input type="text" class="form-control" id="name-first" placeholder="First">
+                <input type="text" class="form-control" id="name-first" name="name_first" placeholder="First">
               </div>
               <div class="form-group col-md-6">
                 <label for="name-first">Last Name</label>
-                <input type="text" class="form-control" id="name-last" placeholder="Last">
+                <input type="text" class="form-control" id="name-last" name="name_last" placeholder="Last">
               </div>
             </div>
             <div class="form-group">
               <label for="address">Address</label>
-              <input type="text" class="form-control" id="address" placeholder="1234 Main St">
+              <input type="text" class="form-control" id="address" name="address" placeholder="1234 Main St">
               <label for="phone">Phone</label>
-              <input type="text" class="form-control" id="phone" placeholder="212-888-8888">
+              <input type="text" class="form-control" id="phone" name="phone" placeholder="212-888-8888">
               <label for="email">Email</label>
-              <input type="email" class="form-control" id="email" placeholder="child@childcare.com">
+              <input type="email" class="form-control" id="email" name="email" placeholder="child@childcare.com">
             </div>
             <button type="submit" class="btn btn-primary">Register</button>
           </form>

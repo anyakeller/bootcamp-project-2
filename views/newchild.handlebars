@@ -4,28 +4,82 @@
       <div class="card mt-4">
         <div class="card-body">
           <h5 class="card-title">Child Form</h5>
-          <form id="addChild">
+          <form id="addChild" method="post" action="/api/Child">
+            <div class="form-row form-inline mb-2 mr-sm-2">
+							<label for="pid" class="mb-1 mr-sm-2">Your Parent Id</label>
+              <input
+                class="form-control"
+								id="pid"
+                type="text"
+                name="ParentId"
+                placeholder="Your parent id is: {{pid}}"
+                value="{{pid}}"
+                readonly
+              />
+            </div>
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="name-first">First Name</label>
-                <input type="text" class="form-control" id="child-name-first" placeholder="First">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="child-name-first"
+                  name="name_first"
+                  placeholder="First"
+                />
               </div>
               <div class="form-group col-md-6">
                 <label for="name-first">Last Name</label>
-                <input type="text" class="form-control" id="child-name-last" placeholder="Last">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="child-name-last"
+                  name="name_last"
+                  placeholder="Last"
+                />
               </div>
             </div>
             <div class="form-group">
               <label for="address">Age</label>
-              <input type="text" class="form-control" id="age" placeholder="age">
+              <input
+                type="text"
+                class="form-control"
+                id="age"
+                name="age"
+                placeholder="age"
+              />
               <label for="gender">Gender</label>
-              <input type="text" class="form-control" id="gender" placeholder="gender">
+              <input
+                type="text"
+                class="form-control"
+                id="gender"
+                name="gender"
+                placeholder="gender"
+              />
               <label for="diet">Allergies</label>
-              <input type="text" class="form-control" id="allergies" placeholder="none">
+              <input
+                type="text"
+                class="form-control"
+                id="allergies"
+                name="allergies"
+                placeholder="none"
+              />
               <label for="diet">Diet Restrictions</label>
-              <input type="text" class="form-control" id="dietRestrictions" placeholder="none">
+              <input
+                type="text"
+                class="form-control"
+                id="dietRestrictions"
+                name="dietRestrictions"
+                placeholder="none"
+              />
               <label for="diet">Notes</label>
-              <input type="text" class="form-control" id="notes" placeholder="notes">
+              <input
+                type="text"
+                class="form-control"
+                id="notes"
+                name="notes"
+                placeholder="notes"
+              />
             </div>
             <button type="submit" class="btn btn-primary">Register</button>
           </form>
@@ -35,46 +89,9 @@
   </div>
 </div>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+></script>
 
-<script>
-  
-  //// Add a New Child
-
-  $('#addChild').on('submit', function () {
-    event.preventDefault();
-    var child = {
-      ParentId: {{pid}}, //set parent id to the recieved parent id from the previous page
-      name_first: $('#child-name-first')
-        .val()
-        .trim(),
-      name_last: $('#child-name-last')
-        .val()
-        .trim(),
-      age: $('#age')
-        .val()
-        .trim(),
-      gender: $('#gender')
-        .val()
-        .trim(),
-      allergies: $('#allergies')
-        .val()
-        .trim(),
-      dietRestrictions: $('#dietRestrictions')
-        .val()
-        .trim(),
-      notes: $('#notes')
-        .val()
-        .trim()
-    };
-    addChildFunc(child);
-  });
-
-  //helper to post child
-  function addChildFunc(child) {
-    $.post('/api/child', child).then(function () {
-      console.log('child added');
-    });
-    //prepare to send user to date selection page that doesn't exist yet (you can make it if you wanna ;)
-  }
-</script>
+<script></script>
