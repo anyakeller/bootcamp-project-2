@@ -7,3 +7,6 @@ app.get('/', function(req, res) {
     res.render('testdbPostRoutes');
   });
 }
+app.get('/childprofile', function(req, res) {
+  res.render('testdbPostRoutes');
+});

@@ -1,3 +1,13 @@
 .list-group-item {
   line-height: 2.5;
 }
+
+.logo {
+  font-family: 'Oswald', sans-serif;
+  align-content: center;
+  font-size: large;
+}
+
+body {
+  background-color: bisque;
+}
