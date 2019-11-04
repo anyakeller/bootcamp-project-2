@@ -8,7 +8,7 @@ module.exports = function(app) {
       include: [db.Child]
     }).then(function(dbParent) {
       JSON.stringify(dbParent);
-			res.json(dbParent);
+      res.json(dbParent);
     });
   });
 
@@ -22,8 +22,10 @@ module.exports = function(app) {
   });
 
   app.post('/api/Parent', function(req, res) {
+
     db.Parent.create(req.body).then(function(dbParent) { 
-      //console.log(dbParent);
+
+			//console.log(dbParent);
       //res.json(dbParent);
       res.render("newchild",{pid: dbParent.id});
     });
