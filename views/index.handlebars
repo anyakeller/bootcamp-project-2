@@ -168,8 +168,8 @@
 		></script>
 	<script>
 
-	var alertthing=$("<div>").addClass("alert alert-danger").attr("role","alert").text("child not found");
-	alertthing.alert("close");
+		var alertthing=$("<div>").addClass("alert alert-danger").attr("role","alert").text("child not found");
+alertthing.alert("close");
 {{#if children}}
 $("#childSearch").on("submit",function(e){
 	alertthing.alert("close");
@@ -197,9 +197,13 @@ $("#childSearch").on("submit",function(e){
 			$(this).addClass("mark");
 			notFound = false;
 		}
+		if($(this).attr("data-firstname")+ " "+ $(this).attr("data-lastname") === query) {
+			$(this).addClass("mark");
+			notFound = false;
+		}
 	});
 	if (notFound){
-	$("#alertZone").append(alertthing);
+		$("#alertZone").append(alertthing);
 		alertthing.alert();
 	}
 });
