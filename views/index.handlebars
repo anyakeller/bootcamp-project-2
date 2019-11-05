@@ -1,9 +1,16 @@
-
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
   <link type="css" href="/public/styles/styles.css" rel="stylsheet">
+<style>
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  line-height: 30px; /* Vertically center the text there */
+}
+</style>
 <body>
     <div class="jumbotron">
         <div class="container">
@@ -86,6 +93,21 @@
             </div>
         </div>
     </div>
+	
+		<footer class="footer page-footer font-small bg-dark">
+			<div class="container-fluid text-center text-md-left">
+			<div class="row justify-content-between">
+				<div class="col-md-4">
+					<a class="badge badge-secondary" href="/api/child">Children API</a>
+					<a class="badge badge-secondary" href="api/parent">Parent API</a>
+				</div>
+				<div class="col-md-4">
+					<a class="badge badge-primary" href="/newparent">Begin Registration Link</a>
+				</div>
+			</div>
+			</div>
+		</footer>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

@@ -25,7 +25,7 @@ module.exports = function(app) {
     });
   });
 
-  app.post('/api/child/:childid', function(req, res) {
+  app.post('/api/child/schedule/:childid', function(req, res) {
     console.log('schedule chidld');
     //console.log(req.body);
     //console.log(req.params);
@@ -38,12 +38,17 @@ module.exports = function(app) {
     }
     db.Child.update(
       {signedUpDates: signedUpDates},
-      {where: {id: req.params.childid}},
-      result => {
-        console.log(result);
-        res.json(result);
-      }
-    );
+      {where: {id: req.params.childid}}
+    ).then(result => {
+      console.log('result');
+      console.log(result);
+      db.Child.findOne({where: {id: req.params.childid}}).then(result => {
+        res.render('addanotherchildprompt.handlebars', {pid: result.ParentId});
+      });
+    });
+  });
+  app.get('/api/child/new/:pid', function(req, res) {
+    res.render('newchild', {pid: req.params.pid});
   });
 
   app.post('/api/child', function(req, res) {
