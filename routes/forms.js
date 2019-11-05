@@ -1,7 +1,7 @@
 module.exports = function(app) {
 
     app.get('/newParent', function(req, res) {
-        res.render('newParent');
+        res.render('newparent');
     });
 
     app.get('/newChild/:pid', function(req, res) {
@@ -9,6 +9,6 @@ module.exports = function(app) {
     });
 
     app.get('/scheduleChild', function(req, res) {
-        res.render('scheduleChild');
+        res.render('schedulechild');
     });
 }

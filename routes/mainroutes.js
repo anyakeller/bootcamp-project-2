@@ -4,7 +4,7 @@ module.exports = function(app) {
   app.get('/', function(req, res) {
     db.Child.findAll().then(function(dbChild) {
       JSON.stringify(dbChild);
-			res.render('index',{children:dbChild});
+      res.render('index', {children: dbChild});
     });
   });
 
@@ -13,10 +13,9 @@ module.exports = function(app) {
   });
 
   app.get('/childprofile/:cid', function(req, res) {
-		    db.Child.findOne({where:{id:req.params.cid}}).then(function(dbChild) {
+    db.Child.findOne({where: {id: req.params.cid}}).then(function(dbChild) {
       JSON.stringify(dbChild);
-			res.render('childprofile',{child:dbChild});
+      res.render('childprofile', {child: dbChild});
     });
-
   });
 };
