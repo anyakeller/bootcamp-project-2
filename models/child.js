@@ -8,7 +8,7 @@ module.exports = function(sequelize, DataTypes) {
     dietRestrictions: DataTypes.TEXT,
     notes: DataTypes.TEXT,
 		photoLink:DataTypes.STRING,
-		signedUpDates: DataTypes.STRING
+		signedUpDates: DataTypes.JSON
   });
   Child.associate = function(models) {
     Child.belongsTo(models.Parent, {

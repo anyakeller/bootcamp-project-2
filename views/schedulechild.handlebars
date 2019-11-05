@@ -1,0 +1,97 @@
+<div class="container">
+  <div class="row">
+    <div class="col-8 offset-2">
+      <div class="card mt-4">
+        <div class="card-body">
+          <h5 class="card-title">Select the days your child will be attending</h5>
+          <form
+            id="scheduleChild"
+            method="post"
+            action="/api/Child/{{childid}}"
+          >
+            <div class="form-group">
+              <div class="form-row form-inline mb-2 mr-sm-2">
+                <label for="pid" class="mb-1 mr-sm-2">Your Child Id</label>
+                <input
+                  class="form-control"
+                  id="pid"
+                  type="text"
+                  name="ParentId"
+                  placeholder="Your parent id is: {{childid}}"
+                  value="{{childid}}"
+                  readonly
+                />
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="selectmonday"
+									name="monday"
+                />
+                <label class="form-check-label" for="selectmonday">
+                  Monday
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="selecttuesday"
+									name="tuesday"
+                />
+                <label class="form-check-label" for="selecttuesday">
+                  Tuesday
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="selectwednesday"
+									name="wednesday"
+                />
+                <label class="form-check-label" for="selectwednesday">
+                  Wednesday
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="selectthursday"
+									name="thursday"
+                />
+                <label class="form-check-label" for="selectthursday">
+                  Thursday
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value="friday"
+                  id="selectfriday"
+									name="friday"
+                />
+                <label class="form-check-label" for="friday">
+                  Friday
+                </label>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">
+              Submit Schedule
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+></script>
+
+<script></script>
