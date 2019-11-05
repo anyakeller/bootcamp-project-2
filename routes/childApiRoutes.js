@@ -42,8 +42,7 @@ module.exports = function(app) {
     }
     db.Child.update(
       {signedUpDates: signedUpDates},
-      {where: {id: req.params.childid}}
-	} ).then(result => {
+      {where: {id: req.params.childid}} ).then(result => {
       console.log('result');
       console.log(result);
       db.Child.findOne({where: {id: req.params.childid}}).then(result => {
