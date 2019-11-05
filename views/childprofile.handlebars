@@ -1,5 +1,4 @@
-<p>Name First: {{child.name_first}}</p>
-<p>Name Last: {{child.name_last}}</p>
+<h1>{{child.name_first}} {{child.name_last}}'s Profile</h1>
 <p>Schedule: 
 <ul>
 {{#each child.signedUpDates as |value day|}}
@@ -13,3 +12,5 @@
 <p>Diet Restrictions: {{child.dietRestrictions}}</p>
 <p>Notes: {{child.notes}}</p>
 <p>Parent ID: {{child.ParentId}}</p>
+
+<button class="btn btn-primary" action="/">Go Back</button>
