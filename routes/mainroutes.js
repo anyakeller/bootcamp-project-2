@@ -12,7 +12,11 @@ module.exports = function(app) {
     res.render('testdbPostRoutes');
   });
 
-  app.get('/childprofile', function(req, res) {
-    res.render('testdbPostRoutes');
+  app.get('/childprofile/:cid', function(req, res) {
+		    db.Child.findOne({where:{id:req.params.cid}}).then(function(dbChild) {
+      JSON.stringify(dbChild);
+			res.render('childprofile',{child:dbChild});
+    });
+
   });
 };

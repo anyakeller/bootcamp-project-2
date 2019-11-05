@@ -1,9 +1,15 @@
-
-      <p>Name First: {{name_first}}</p>
-      <p>Name Last: {{name_last}}</p>
-      <p>Age: {{age}}</p>
-      <p>Gender: {{gender}}</p>
-      <p>Allergies: {{allergies}}</p>
-      <p>Diet Restrictions: {{dietRestrictions}}</p>
-      <p>Notes: {{notes}}</p>
-      <p>Parent ID: {{ParentId}}</p>
+<p>Name First: {{child.name_first}}</p>
+<p>Name Last: {{child.name_last}}</p>
+<p>Schedule: 
+<ul>
+{{#each child.signedUpDates as |value day|}}
+<li> {{day}}: {{value}}</li>
+{{/each}}
+</ul>
+</p>
+<p>Age: {{child.age}}</p>
+<p>Gender: {{child.gender}}</p>
+<p>Allergies: {{child.allergies}}</p>
+<p>Diet Restrictions: {{child.dietRestrictions}}</p>
+<p>Notes: {{child.notes}}</p>
+<p>Parent ID: {{child.ParentId}}</p>
