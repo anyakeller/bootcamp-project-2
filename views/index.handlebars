@@ -178,29 +178,20 @@ $("#childSearch").on("submit",function(e){
 	$(".child").each(function(index){
 		$(this).removeClass("mark")
 	});
-	var childrenfirst = {};
-	var childrenlast = {};
-	{{#each children}}
-	childrenfirst[{{id}}] = "{{name_first}}";
-	childrenlast[{{id}}] = "{{name_last}}";
-	{{/each}}
 	var query=$("#searchquery").val().trim();
 	console.log(query);
 	var notFound = true;
 	$(".child").each(function(index){
 		console.log($(this).attr("data-firstname") );
-		if($(this).attr("data-firstname") === query) {
+		if(query.includes($(this).attr("data-firstname"))) {
 			$(this).addClass("mark");
 			notFound = false;
 		}
-		if($(this).attr("data-firstname") === query) {
+		if(query.includes($(this).attr("data-lastname"))) {
 			$(this).addClass("mark");
 			notFound = false;
 		}
-		if($(this).attr("data-firstname")+ " "+ $(this).attr("data-lastname") === query) {
-			$(this).addClass("mark");
-			notFound = false;
-		}
+	
 	});
 	if (notFound){
 		$("#alertZone").append(alertthing);
