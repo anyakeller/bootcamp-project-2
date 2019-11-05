@@ -1,6 +1,7 @@
 var db = require('../models');
 
 module.exports = function(app) {
+	//get all children
   app.get('/api/child', function(req, res) {
     db.Child.findAll({
       include: [db.Parent]
@@ -10,6 +11,7 @@ module.exports = function(app) {
     });
   });
 
+	//get child by id
   app.get('/api/child/:id', function(req, res) {
     // Here we add an "include" property to our options in our findAll query
     // We set the value to an array of the models we want to include in a left outer join
@@ -24,7 +26,9 @@ module.exports = function(app) {
       res.json(dbChild);
     });
   });
+	
 
+	// schedule child form
   app.post('/api/child/schedule/:childid', function(req, res) {
     console.log('schedule chidld');
     //console.log(req.body);
@@ -38,8 +42,7 @@ module.exports = function(app) {
     }
     db.Child.update(
       {signedUpDates: signedUpDates},
-      {where: {id: req.params.childid}}
-    ).then(result => {
+      {where: {id: req.params.childid}} ).then(result => {
       console.log('result');
       console.log(result);
       db.Child.findOne({where: {id: req.params.childid}}).then(result => {
@@ -47,10 +50,13 @@ module.exports = function(app) {
       });
     });
   });
+
+	//add new child form
   app.get('/api/child/new/:pid', function(req, res) {
     res.render('newchild', {pid: req.params.pid});
   });
 
+	//add new child
   app.post('/api/child', function(req, res) {
     //console.log(req.body);
     db.Child.create(req.body).then(function(dbChild) {

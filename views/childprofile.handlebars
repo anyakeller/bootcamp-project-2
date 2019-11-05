@@ -1,9 +1,21 @@
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12 col-md-6 col-lg-6">
+	<h1>{{child.name_first}} {{child.name_last}}'s Profile</h1>
+	<p>Schedule: </p>
+	<ul>
+		{{#each child.signedUpDates as |value day|}}
+		<li> {{day}}: {{value}}</li>
+		{{/each}}
+	</ul>
+	<p>Age: {{child.age}}</p>
+	<p>Gender: {{child.gender}}</p>
+	<p>Allergies: {{child.allergies}}</p>
+	<p>Diet Restrictions: {{child.dietRestrictions}}</p>
+	<p>Notes: {{child.notes}}</p>
+	<p>Parent ID: {{child.ParentId}}</p>
 
-      <p>Name First: {{name_first}}</p>
-      <p>Name Last: {{name_last}}</p>
-      <p>Age: {{age}}</p>
-      <p>Gender: {{gender}}</p>
-      <p>Allergies: {{allergies}}</p>
-      <p>Diet Restrictions: {{dietRestrictions}}</p>
-      <p>Notes: {{notes}}</p>
-      <p>Parent ID: {{ParentId}}</p>
+<a href="/">Go Back</a>
+		</div>
+	</div>
+</div>
