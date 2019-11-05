@@ -1,121 +1,159 @@
 <head>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
-  <link type="css" href="/public/styles/styles.css" rel="stylsheet">
-<style>
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  line-height: 30px; /* Vertically center the text there */
-}
-</style>
-<body>
+  <meta charset="utf-8" />
+  <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css"
+  />
+  <link
+    href="https://fonts.googleapis.com/css?family=Oswald&display=swap"
+    rel="stylesheet"
+  />
+  <link type="css" href="/public/styles/styles.css" rel="stylsheet" />
+  <style>
+    .footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      line-height: 30px; /* Vertically center the text there */
+    }
+  </style>
+  <body>
     <div class="jumbotron">
-        <div class="container">
-            <h1 class="display-5 logo">NanaCare</h1>
-            <p class="lead">Welcome to NanaCare! An admin tool for daycares.</p>
-​
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="#">
-                    <h5>WEEKLY VIEW</h5>
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
-                </form>
+      <div class="container">
+        <h1 class="display-5 logo">NanaCare</h1>
+        <p class="lead">Welcome to NanaCare! An admin tool for daycares.</p>
+        ​
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <a class="navbar-brand" href="#">
+            <h5>WEEKLY VIEW</h5>
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <form class="form-inline my-2 my-lg-0" id="childSearch">
+            <input
+              class="form-control mr-sm-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">
+              Search
+            </button>
+          </form>
         </nav>
-    </div>
+      </div>
 
-		{{#if children}}
-		<div class="container">
+      <div class="container">
         <div class="card-group">
-​
-            <div class="card text-white bg-primary day-card">
-                <div class="card-body">
-                    <h6 class="card-title">MONDAY</h6>
-										{{#each children}}
-										<p class="card-text">{{#if signedUpDates.monday}}{{name_first}}{{/if}}</p>
-										{{/each}}
-                    {{!-- <p class="card-text">child2</p> --}}
-                    {{!-- <p class="card-text">child3</p> --}}
-                    {{!-- <p class="card-text">child4</p> --}}
-                    {{!-- <p class="card-text">child5</p> --}}
-                </div>
+          ​
+          <div class="card text-white bg-primary day-card">
+            <div class="card-body">
+              <h6 class="card-title">MONDAY</h6>
+              {{#if children}} {{#each children}}
+              <p class="card-text">
+                {{#if signedUpDates.monday}}{{name_first}}{{/if}}
+              </p>
+              {{/each}} {{/if}} {{!--
+              <p class="card-text">child2</p>
+              --}} {{!--
+              <p class="card-text">child3</p>
+              --}} {{!--
+              <p class="card-text">child4</p>
+              --}} {{!--
+              <p class="card-text">child5</p>
+              --}}
             </div>
-​
-            <div class="card text-white bg-success day-card">
-                <div class="card-body">
-                    <h6 class="card-title">TUESDAY</h6>
-										{{#each children}}
-										<p class="card-text">{{#if signedUpDates.tuesday}}{{name_first}}{{/if}}</p>
-										{{/each}}
-                 
-                </div>
+          </div>
+          ​
+          <div class="card text-white bg-success day-card">
+            <div class="card-body">
+              <h6 class="card-title">TUESDAY</h6>
+              {{#if children}} {{#each children}}
+              <p class="card-text">
+                {{#if signedUpDates.tuesday}}{{name_first}}{{/if}}
+              </p>
+              {{/each}} {{/if}}
             </div>
-​
-            <div class="card text-white bg-danger day-card">
-                <div class="card-body">
-                    <h6 class="card-title">WEDNESDAY</h6>
-										{{#each children}}
-										<p class="card-text">{{#if signedUpDates.wednesday}}{{name_first}}{{/if}}</p>
-										{{/each}}
-             
-                </div>
+          </div>
+          ​
+          <div class="card text-white bg-danger day-card">
+            <div class="card-body">
+              <h6 class="card-title">WEDNESDAY</h6>
+              {{#if children}} {{#each children}}
+              <p class="card-text">
+                {{#if signedUpDates.wednesday}}{{name_first}}{{/if}}
+              </p>
+              {{/each}} {{/if}}
             </div>
-​
-            <div class="card text-white bg-warning day-card">
-                <div class="card-body">
-                    <h6 class="card-title">THURSDAY</h6>
-                  	{{#each children}}
-										<p class="card-text">{{#if signedUpDates.thursday}}{{name_first}}{{/if}}</p>
-										{{/each}}
-                </div>
+          </div>
+          ​
+          <div class="card text-white bg-warning day-card">
+            <div class="card-body">
+              <h6 class="card-title">THURSDAY</h6>
+              {{#if children}} {{#each children}}
+              <p class="card-text">
+                {{#if signedUpDates.thursday}}{{name_first}}{{/if}}
+              </p>
+              {{/each}} {{/if}}
             </div>
-​
-            <div class="card text-white bg-info day-card">
-                <div class="card-body">
-                    <h6 class="card-title">FRIDAY</h6>
-                	{{#each children}}
-										<p class="card-text">{{#if signedUpDates.friday}}{{name_first}}{{/if}}</p>
-										{{/each}}
-								</div>
+          </div>
+          ​
+          <div class="card text-white bg-info day-card">
+            <div class="card-body">
+              <h6 class="card-title">FRIDAY</h6>
+              {{#if children}} {{#each children}}
+              <p class="card-text">
+                {{#if signedUpDates.friday}}{{name_first}}{{/if}}
+              </p>
+              {{/each}} {{/if}}
             </div>
+          </div>
         </div>
-		</div>
+      </div>
     </div>
-		{{/if}}
 
-		<footer class="footer page-footer font-small bg-dark">
-			<div class="container-fluid text-center text-md-left">
-			<div class="row justify-content-between">
-				<div class="col-md-4">
-					<a class="badge badge-secondary" href="/api/child">Children API</a>
-					<a class="badge badge-secondary" href="api/parent">Parent API</a>
-				</div>
-				<div class="col-md-4">
-					<a class="badge badge-primary" href="/newparent">Begin Registration Link</a>
-				</div>
-			</div>
-			</div>
-		</footer>
+    <footer class="footer page-footer font-small bg-dark">
+      <div class="container-fluid text-center text-md-left">
+        <div class="row justify-content-between">
+          <div class="col-md-4">
+            <a class="badge badge-secondary" href="/api/child">Children API</a>
+            <a class="badge badge-secondary" href="api/parent">Parent API</a>
+          </div>
+          <div class="col-md-4">
+            <a class="badge badge-primary" href="/newparent"
+              >Begin Registration Link</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-    </script>
-</body>
-
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script></script>
+  </body>
+</head>
