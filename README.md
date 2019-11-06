@@ -36,19 +36,26 @@ $ node server
 ### App Views
 <img src="reference/weekviewshot.png" width="500">
 <img src="reference/childprofileshot.png" width="500">
+
 ### Form Views
+
 <img src="reference/parentform.png" width="500">
 <img src="reference/childform.png" width="500">
 <img src="reference/scheduleform.png" width="500">
+
 ### Api Views
+
 <img src="reference/childrenapi.png" width="500">
 <img src="reference/parentapi.png" width="500">
 
 
 ## Reference
-Website Schema
+### Website Schema
+
 <img src="reference/websiteSchema.png" width="250">
-Mockups
+
+### Mockups
+
 <img src="reference/childProfile.png?" width="250">
 <img src="reference/weekView.png" width="250">
 
