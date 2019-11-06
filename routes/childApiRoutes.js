@@ -65,6 +65,16 @@ module.exports = function(app) {
     });
   });
 
+  app.post('/api/child/del/:id', function(req, res) {
+    db.Child.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(dbChild) {
+      res.redirect("/");
+    });
+  });
+
   app.delete('/api/child/:id', function(req, res) {
     db.Child.destroy({
       where: {

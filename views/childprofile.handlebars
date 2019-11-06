@@ -147,9 +147,16 @@
       </form>
       <button id="edit" class="btn btn-primary">Edit Child</button>
     </div>
+		<div class="row">
+			<div class="col">
+				<form method="post" action="/api/child/del/{{child.id}}">
+				<button action="submit" class="btn btn-danger btn-sm" id="deleteChild">Delete Child</button>
+				</form>
+			</div>
+		</div>
   </div>
   <a href="/">Go to Week View</a>
-</div>
+</div>"
 <script
   type="text/javascript"
   src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
