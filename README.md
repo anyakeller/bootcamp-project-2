@@ -47,7 +47,9 @@ $ node server
 
 ## Reference
 Website Schema
-![Site Schema](reference/websiteSchema.png?raw=true "Website Schema")
+<img src="reference/websiteSchema.png" width="250">
+![Site Schema](?raw=true "Website Schema")
 Mockups
-![Child Profile](reference/childProfile.png?raw=true "Child Profile")
-![Week View](reference/weekView.png?raw=true "Week View")
+<img src="reference/childProfile.png?" width="250">
+<img src="reference/weekView.png" width="250">
+
