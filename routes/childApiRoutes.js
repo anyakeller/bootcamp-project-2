@@ -43,23 +43,27 @@ module.exports = function(app) {
     });
   });
 
-	app.post('/api/child/:id', function(req, res) {
+  app.post('/api/child/:id', function(req, res) {
     //console.log(req.body);
-		var daysOfWeek = ["monday","tuesday","wednesday","thursday","friday"];
-		var daysToUpdate = {};
-		for (var i=0;i<daysOfWeek.length;i++){
-			if(daysOfWeek[i] in req.body && req.body[daysOfWeek[i]]==="on") daysToUpdate[daysOfWeek[i]] = true;
-			else daysToUpdate[daysOfWeek[i]]=false;
-		}
-		//res.json(req.body);
-		
-    db.Child.update(req.body,{where:{id:req.params.id}}).then(function(dbChild) {
-		});
-    db.Schedule.update(daysToUpdate,{where:{ChildId:req.params.id}}).then(function(dbChild) {
-		});
+    var daysOfWeek = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday'];
+    var daysToUpdate = {};
+    for (var i = 0; i < daysOfWeek.length; i++) {
+      if (daysOfWeek[i] in req.body && req.body[daysOfWeek[i]] === 'on')
+        daysToUpdate[daysOfWeek[i]] = true;
+      else daysToUpdate[daysOfWeek[i]] = false;
+    }
+    //res.json(req.body);
+
+    db.Child.update(req.body, {where: {id: req.params.id}}).then(function(
+      dbChild
+    ) {
+      db.Schedule.update(daysToUpdate, {where: {ChildId: req.params.id}}).then(
+        function(dbSchedule) {
+					res.redirect("/childprofile/"+req.params.id);
+				}
+      );
+    });
   });
-
-
 
   app.delete('/api/child/:id', function(req, res) {
     db.Child.destroy({
