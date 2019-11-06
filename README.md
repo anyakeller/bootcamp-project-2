@@ -34,7 +34,7 @@ $ node server
 ```
 ## Screenshots
 ### App Views
-![Home Route (week view)](reference/weekviewshot.png?raw=true =100x20 "Home Route weekview")
+![Home Route (week view)](reference/weekviewshot.png?raw=true "Home Route weekview")
 ![Child Profile](reference/childprofileshot.png?raw=true =100x20 "Child Profile")
 ### Form Views
 ![Parent Form](reference/parentform.png?raw=true =100x20 "Parent Form")
