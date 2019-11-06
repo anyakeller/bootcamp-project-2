@@ -34,7 +34,7 @@ module.exports = function(app) {
   app.post('/api/child', function(req, res) {
     //console.log(req.body);
     db.Child.create(req.body).then(function(dbChild) {
-      console.log(dbChild);
+      //console.log(dbChild);
       //res.json(dbChild);
       res.render('schedulechild', {
         childid: dbChild.id,
