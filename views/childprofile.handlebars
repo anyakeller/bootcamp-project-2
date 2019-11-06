@@ -1,21 +1,170 @@
 <div class="container">
-	<div class="row">
-		<div class="col-sm-12 col-md-6 col-lg-6">
-	<h1>{{child.name_first}} {{child.name_last}}'s Profile</h1>
-	<p>Schedule: </p>
-	<ul>
-		{{#each child.signedUpDates as |value day|}}
-		<li> {{day}}: {{value}}</li>
-		{{/each}}
-	</ul>
-	<p>Age: {{child.age}}</p>
-	<p>Gender: {{child.gender}}</p>
-	<p>Allergies: {{child.allergies}}</p>
-	<p>Diet Restrictions: {{child.dietRestrictions}}</p>
-	<p>Notes: {{child.notes}}</p>
-	<p>Parent ID: {{child.ParentId}}</p>
-
-<a href="/">Go Back</a>
-		</div>
-	</div>
+  <div class="row mt-4">
+    <div class="col-sm-12 col-md-6 col-lg-6">
+      <small>Child ID: {{child.id}}</small>
+      <small>Parent ID: {{child.ParentId}}</small>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 col-md-6 col-lg-6">
+      <form
+        class="mb-3 disabledinput"
+        id="updateChild"
+        method="post"
+        action="/api/child/{{child.id}}"
+      >
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <h2>
+              <label for="name-first">First Name</label>
+              <input
+                type="text"
+                class="form-control disabledinput"
+                id="child-name-first"
+                name="name_first"
+                value="{{child.name_first}}"
+                disabled
+              />
+            </h2>
+          </div>
+          <div class="form-group col-md-6">
+            <h2>
+              <label for="name-first">Last Name</label>
+              <input
+                type="text"
+                class="form-control disabledinput"
+                id="child-name-last"
+                name="name_last"
+                value="{{child.name_last}}"
+                disabled
+              />
+            </h2>
+          </div>
+        </div>
+        <div class="form-group">
+          <legend>Schedule:</legend>
+            <div class="form-check">
+              <input class="form-check-input disabledinput" type="checkbox"
+              id="selectmonday" name="monday" {{#if
+              child.Schedule.monday}}checked{{/if}} disabled />
+              <label class="form-check-label" for="selectmonday">
+                Monday {{#if child.Schedule.monday}}
+                <small>Currently Enrolled</small>
+                {{/if}}
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input disabledinput" type="checkbox"
+              id="selecttuesday" name="tuesday" {{#if
+              child.Schedule.tuesday}}checked{{/if}} disabled />
+              <label class="form-check-label" for="selecttuesday">
+								Tuesday {{#if child.Schedule.tuesday}}
+                <small>Currently Enrolled</small>
+                {{/if}}
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input disabledinput" type="checkbox"
+              id="selectwednesday" name="wednesday" {{#if
+              child.Schedule.wednesday}}checked{{/if}} disabled />
+              <label class="form-check-label" for="selectwednesday">
+                Wednesday {{#if child.Schedule.wednesday}}
+                <small>Currently Enrolled</small>
+                {{/if}}
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input disabledinput" type="checkbox"
+              id="selectthursday" name="thursday" {{#if
+              child.Schedule.thursday}}checked{{/if}} disabled />
+              <label class="form-check-label" for="selectthursday">
+                Thursday {{#if child.Schedule.thursday}}
+                <small>Currently Enrolled</small>
+                {{/if}}
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input disabledinput" type="checkbox"
+              id="selectfriday" name="friday" {{#if
+              child.Schedule.friday}}checked{{/if}} disabled />
+              <label class="form-check-label" for="selectfriday">
+                Friday {{#if child.Schedule.friday}}
+                <small>Currently Enrolled</small>
+                {{/if}}
+              </label>
+            </div>
+          </fieldset>
+        </div>
+        <div class="form-group">
+          <label for="address">Age</label>
+          <input
+            type="text"
+            class="form-control disabledinput"
+            id="age"
+            name="age"
+            value="{{child.age}}"
+            disabled
+          />
+          <label for="gender">Gender</label>
+          <input
+            type="text"
+            class="form-control disabledinput"
+            id="gender"
+            name="gender"
+            value="{{child.gender}}"
+            disabled
+          />
+          <label for="diet">Allergies</label>
+          <input
+            type="text"
+            class="form-control disabledinput"
+            id="allergies"
+            name="allergies"
+            value="{{child.allergies}}"
+            disabled
+          />
+          <label for="diet">Diet Restrictions</label>
+          <input
+            type="text"
+            class="form-control disabledinput"
+            id="dietRestrictions"
+            name="dietRestrictions"
+            value="{{child.dietRestrictions}}"
+            disabled
+          />
+          <label for="diet">Notes</label>
+          <input
+            type="text"
+            class="form-control disabledinput"
+            id="notes"
+            name="notes"
+            value="{{child.notes}}"
+            disabled
+          />
+        </div>
+        {{!--
+        <button class="btn btn-success" type="submit">Update Child</button> --}}
+      </form>
+      <button id="edit" class="btn btn-primary">Edit Child</button>
+    </div>
+  </div>
+  <a href="/">Go to Week View</a>
 </div>
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+></script>
+<script>
+  //edit child btn make form editable
+  $('#edit').on('click', function() {
+    console.log('editing');
+    $('#updateChild').append(
+      $('<button>')
+        .attr({type: 'submit', class: 'btn btn-success', id: 'updatebtn'})
+        .text('Update Child')
+    );
+    $('.disabledinput').each(function(thing) {
+      $(this).prop('disabled', false);
+    });
+  });
+</script>

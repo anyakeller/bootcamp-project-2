@@ -7,18 +7,30 @@
           <form
             id="scheduleChild"
             method="post"
-            action="/api/Child/schedule/{{childid}}"
+            action="/api/schedule/{{childid}}"
           >
             <div class="form-group">
               <div class="form-row form-inline mb-2 mr-sm-2">
-                <label for="pid" class="mb-1 mr-sm-2">Your Child Id</label>
+                <label for="cid" class="mb-1 mr-sm-2">Your Child Id</label>
+                <input
+                  class="form-control"
+                  id="cid"
+                  type="text"
+                  name="ChildId"
+                  placeholder="Your Child id is: {{childid}}"
+                  value="{{childid}}"
+                  readonly
+                />
+              </div>
+              <div class="form-row form-inline mb-2 mr-sm-2">
+                <label for="pid" class="mb-1 mr-sm-2">Your Parent Id</label>
                 <input
                   class="form-control"
                   id="pid"
                   type="text"
                   name="ParentId"
-                  placeholder="Your parent id is: {{childid}}"
-                  value="{{childid}}"
+                  placeholder="Your Child id is: {{pid}}"
+                  value="{{pid}}"
                   readonly
                 />
               </div>
@@ -70,7 +82,6 @@
                 <input
                   class="form-check-input"
                   type="checkbox"
-                  value="friday"
                   id="selectfriday"
 									name="friday"
                 />
