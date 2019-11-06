@@ -38,7 +38,7 @@ $ node server
 ![Child Profile](reference/childprofileshot.png?raw=true =100x "Child Profile")
 ### Form Views
 ![Parent Form](reference/parentform.png?raw=true =100x "Parent Form")
-![Child Form](reference/childform.png?raw=true 100x "Child Form")
+![Child Form](reference/childform.png?raw=true =100x "Child Form")
 ![Schedule Form](reference/scheduleform.png?raw=true =100x "Schedule Form")
 ### Api Views
 ![Children API](reference/childrenapi.png?raw=true =100x "Children API")
