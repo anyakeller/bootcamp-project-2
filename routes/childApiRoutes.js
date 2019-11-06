@@ -34,7 +34,7 @@ module.exports = function(app) {
   app.post('/api/child', function(req, res) {
     //console.log(req.body);
     db.Child.create(req.body).then(function(dbChild) {
-      console.log(dbChild);
+      //console.log(dbChild);
       //res.json(dbChild);
       res.render('schedulechild', {
         childid: dbChild.id,
@@ -62,6 +62,16 @@ module.exports = function(app) {
 					res.redirect("/childprofile/"+req.params.id);
 				}
       );
+    });
+  });
+
+  app.post('/api/child/del/:id', function(req, res) {
+    db.Child.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(dbChild) {
+      res.redirect("/");
     });
   });
 
