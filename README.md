@@ -34,7 +34,7 @@ $ node server
 ```
 ## Screenshots
 ### App Views
-<img src="reference/weekviewshot.png" width="100">
+<img src="reference/weekviewshot.png" width="500">
 ![Child Profile](reference/childprofileshot.png?raw=true "Child Profile")
 ### Form Views
 ![Parent Form](reference/parentform.png?raw=true  "Parent Form")
