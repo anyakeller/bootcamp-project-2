@@ -3,9 +3,10 @@
 
 # Table of Contents
 1. [About](#about)
-2. [HowTo](#howto)
-3. [Screenshots](#screenshots)
-4. [Reference](#reference)
+2. [How To](#howto)
+3. [run](#run)
+4. [Screenshots](#screenshots)
+5. [Reference](#reference)
 
 ## About
 NanaCare is an application for daycare administrators to easily organize and register children.
@@ -16,6 +17,11 @@ Features:
 - Easy to access api system
 
 ## HowTo
+- To register a parent, their child, assign the child days to attend, and register more children, use the form in the bottom right corner labeled "Begin Registration".
+- Data will be displayed on the home route.
+- Details about a child can be viewed and edited by clicking on a child's name in week view
+
+## Run
 To run the app locally, node must be installed in your terminal.
 Run the following to initialize:
 ``` bash
@@ -27,7 +33,17 @@ Run the following in the main directory to start app onl localhost port 3000
 $ node server
 ```
 ## Screenshots
-SCREEENSHOTS GO HERE
+### App Views
+![Home Route (week view)](reference/weekviewshot.png?raw=true "Home Route weekview")
+![Child Profile](reference/childprofileshot.png?raw=true "Child Profile")
+### Form Views
+![Parent Form](reference/parentform.png?raw=true "Parent Form")
+![Child Form](reference/childform.png?raw=true "Child Form")
+![Schedule Form](reference/scheduleform.png?raw=true "Schedule Form")
+### Api Views
+![Children API](reference/childrenapi.png?raw=true "Children API")
+![Parent API](reference/parentapi.png?raw=true "Parent API")
+
 
 ## Reference
 Website Schema
