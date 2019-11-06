@@ -1,222 +1,222 @@
 <head>
-	<meta charset="utf-8" />
-	<link
-		rel="stylesheet"
-		href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css"
-		/>
-	<link
-		href="https://fonts.googleapis.com/css?family=Oswald&display=swap"
-		rel="stylesheet"
-		/>
-	<link type="css" href="/public/styles/styles.css" rel="stylsheet" />
-	<style>
-.footer {
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-	line-height: 30px; /* Vertically center the text there */
-}
-		.mark {
-			border-radius: 20px;
-			color: black;
-			background-color:lightblue;
-		}
-		.child{
-			color:white;
-		}
-		.child:hover{
-			color:lightgrey;
-		}
-	</style>
+  <meta charset="utf-8" />
+  <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css"
+  />
+  <link
+    href="https://fonts.googleapis.com/css?family=Oswald&display=swap"
+    rel="stylesheet"
+  />
+  <link type="css" href="/public/styles/styles.css" rel="stylsheet" />
+  <style>
+    .footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      line-height: 40px; /* Vertically center the text there */
+    }
+    .mark {
+      border-radius: 20px;
+      color: black;
+      background-color: lightblue;
+    }
+    .child {
+      color: white;
+    }
+    .child:hover {
+      color: lightgrey;
+    }
+  </style>
 </head>
 <body>
-	<div class="jumbotron">
-		<div class="container">
-			<h1 class="display-5 logo">NanaCare</h1>
-			<p class="lead">Welcome to NanaCare! An admin tool for daycares.</p>
-			​
-			<div id="alertZone"></div>
-			<nav class="navbar navbar-light bg-light">
-				<h5 class="navbar-brand mr-4">WEEKLY VIEW</h5>
-				<form class="form-inline my-2 my-lg-0 ml-4" id="childSearch">
-					<input
-						class="form-control mr-sm-2"
-						type="search"
-						placeholder="Search"
-						aria-label="Search"
-						id="searchquery"
-						/>
-					<button class="btn btn-outline-primary my-2 my-sm-0" type="submit">
-						Search
-					</button>
-				</form>
-				<button class="btn btn-danger" id="clearsearch">Clear Search</button>
-			</nav>
-		</div>
+  <div class="jumbotron">
+    <div class="container">
+      <h1 class="display-5 logo">NanaCare</h1>
+      <p class="lead">Welcome to NanaCare! An admin tool for daycares.</p>
+      ​
+      <div id="alertZone"></div>
+      <nav class="navbar navbar-light bg-light">
+        <h5 class="navbar-brand mr-4">WEEKLY VIEW</h5>
+        <form class="form-inline my-2 my-lg-0 ml-4" id="childSearch">
+          <input
+            class="form-control mr-sm-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+            id="searchquery"
+          />
+          <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">
+            Search
+          </button>
+        </form>
+        <button class="btn btn-danger" id="clearsearch">Clear Search</button>
+      </nav>
+    </div>
 
-		<div class="container">
-			<div class="card-group">
-				​
-				<div class="card text-white bg-primary day-card">
-					<div class="card-body">
-						<h6 class="card-title">MONDAY</h6>
-						{{#if children}} {{#each children}} {{#if signedUpDates.monday}}
-						<a
-							class="card-text child"
-							data-cid="{{id}}"
-							data-firstname="{{name_first}}"
-							data-lastname="{{name_last}}"
-							href="/childprofile/{{id}}"
-							>
-							{{name_first}} {{name_last}}
-						</a>
-						{{/if}} {{/each}} {{/if}}
-					</div>
-				</div>
-				​
-				<div class="card text-white bg-success day-card">
-					<div class="card-body">
-						<h6 class="card-title">TUESDAY</h6>
-						{{#if children}} {{#each children}} {{#if signedUpDates.tuesday}}
-						<a
-							class="card-text child"
-							data-cid="{{id}}"
-							data-firstname="{{name_first}}"
-							data-lastname="{{name_last}}"
-							href="/childprofile/{{id}}"
-							>
-							{{name_first}} {{name_last}}
-						</a>
-						{{/if}} {{/each}} {{/if}}
-					</div>
-				</div>
-				​
-				<div class="card text-white bg-danger day-card">
-					<div class="card-body">
-						<h6 class="card-title">WEDNESDAY</h6>
-						{{#if children}} {{#each children}} {{#if signedUpDates.wednesday}}
-						<a
-							class="card-text child"
-							data-cid="{{id}}"
-							data-firstname="{{name_first}}"
-							data-lastname="{{name_last}}"
-							href="/childprofile/{{id}}"
-							>
-							{{name_first}} {{name_last}}
-						</a>
-						{{/if}} {{/each}} {{/if}}
-					</div>
-				</div>
-				​
-				<div class="card text-white bg-warning day-card">
-					<div class="card-body">
-						<h6 class="card-title">THURSDAY</h6>
-						{{#if children}} {{#each children}} {{#if signedUpDates.thursday}}
-						<a
-							class="card-text child"
-							data-cid="{{id}}"
-							data-firstname="{{name_first}}"
-							data-lastname="{{name_last}}"
-							href="/childprofile/{{id}}"
-							>
-							{{name_first}} {{name_last}}
-						</a>
-						{{/if}} {{/each}} {{/if}}
-					</div>
-				</div>
-				​
-				<div class="card text-white bg-info day-card">
-					<div class="card-body">
-						<h6 class="card-title">FRIDAY</h6>
-						{{#if children}} {{#each children}} {{#if signedUpDates.friday}}
-						<a
-							class="card-text child"
-							data-cid="{{id}}"
-							data-firstname="{{name_first}}"
-							data-lastname="{{name_last}}"
-							href="/childprofile/{{id}}"
-							>
-							{{name_first}} {{name_last}}
-						</a>
-						{{/if}} {{/each}} {{/if}}
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+    <div class="container">
+      <div class="card-group">
+        ​
+        <div class="card text-white bg-primary day-card">
+          <div class="card-body">
+            <h6 class="card-title">MONDAY</h6>
+            {{#if schedules}} {{#each schedules}} {{#if monday}}
+            <a
+              class="card-text child"
+              data-cid="{{Child.id}}"
+              data-firstname="{{Child.name_first}}"
+              data-lastname="{{Child.name_last}}"
+              href="/childprofile/{{Child.id}}"
+            >
+              {{Child.name_first}} {{Child.name_last}}
+            </a>
+            {{/if}} {{/each}} {{/if}}
+          </div>
+        </div>
+        ​
+        <div class="card text-white bg-success day-card">
+          <div class="card-body">
+            <h6 class="card-title">TUESDAY</h6>
+            {{#if schedules}} {{#each schedules}} {{#if tuesday}}
+            <a
+              class="card-text child"
+              data-cid="{{Child.id}}"
+              data-firstname="{{Child.name_first}}"
+              data-lastname="{{Child.name_last}}"
+              href="/childprofile/{{Child.id}}"
+            >
+              {{Child.name_first}} {{Child.name_last}}
+            </a>
+            {{/if}} {{/each}} {{/if}}
+          </div>
+        </div>
+        ​
+        <div class="card text-white bg-danger day-card">
+          <div class="card-body">
+            <h6 class="card-title">WEDNESDAY</h6>
+            {{#if schedules}} {{#each schedules}} {{#if wednesday}}
+            <a
+              class="card-text child"
+              data-cid="{{Child.id}}"
+              data-firstname="{{Child.name_first}}"
+              data-lastname="{{Child.name_last}}"
+              href="/childprofile/{{Child.id}}"
+            >
+              {{Child.name_first}} {{Child.name_last}}
+            </a>
+            {{/if}} {{/each}} {{/if}}
+          </div>
+        </div>
+        ​
+        <div class="card text-white bg-warning day-card">
+          <div class="card-body">
+            <h6 class="card-title">THURSDAY</h6>
+            {{#if schedules}} {{#each schedules}} {{#if thursday}}
+            <a
+              class="card-text child"
+              data-cid="{{Child.id}}"
+              data-firstname="{{Child.name_first}}"
+              data-lastname="{{Child.name_last}}"
+              href="/childprofile/{{Child.id}}"
+            >
+              {{Child.name_first}} {{Child.name_last}}
+            </a>
+            {{/if}} {{/each}} {{/if}}
+          </div>
+        </div>
+        ​
+        <div class="card text-white bg-info day-card">
+          <div class="card-body">
+            <h6 class="card-title">FRIDAY</h6>
+            {{#if schedules}} {{#each schedules}} {{#if friday}}
+            <a
+              class="card-text child"
+              data-cid="{{Child.id}}"
+              data-firstname="{{Child.name_first}}"
+              data-lastname="{{Child.name_last}}"
+              href="/childprofile/{{Child.id}}"
+            >
+              {{Child.name_first}} {{Child.name_last}}
+            </a>
+            {{/if}} {{/each}} {{/if}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-	<footer class="footer page-footer font-small bg-dark">
-		<div class="container-fluid text-center text-md-left">
-			<div class="row justify-content-between">
-				<div class="col-md-4">
-					<a class="badge badge-secondary" href="/api/child">Children API</a>
-					<a class="badge badge-secondary" href="api/parent">Parent API</a>
-				</div>
-				<div class="col-md-4">
-					<a class="badge badge-primary" href="/newparent"
-																				 >Begin Registration Link</a
-																			 >
-				</div>
-			</div>
-		</div>
-	</footer>
+  <footer class="footer page-footer font-small bg-dark">
+    <div class="container-fluid text-center text-md-left">
+      <div class="row justify-content-between">
+        <div class="col-md-4">
+          <a class="badge badge-secondary" href="/api/child">Children API</a>
+          <a class="badge badge-secondary" href="api/parent">Parent API</a>
+        </div>
+        <div class="col-md-4">
+          <a class="badge badge-primary" href="/newparent"
+            >Begin Registration Link</a
+          >
+        </div>
+      </div>
+    </div>
+  </footer>
 
-	<!-- Optional JavaScript -->
-	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-	<script
-		src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-		crossorigin="anonymous"
-		></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-		crossorigin="anonymous"
-		></script>
-	<script
-		src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-		crossorigin="anonymous"
-		></script>
-	<script>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"
+  ></script>
+  <script>
 
-		var alertthing=$("<div>").addClass("alert alert-danger").attr("role","alert").text("child not found");
-alertthing.alert("close");
-{{#if children}}
-$("#childSearch").on("submit",function(e){
-	alertthing.alert("close");
-	e.preventDefault();
-	$('.alert').alert();
-	$(".child").each(function(index){
-		$(this).removeClass("mark")
-	});
-	var query=$("#searchquery").val().trim();
-	console.log(query);
-	var notFound = true;
-	$(".child").each(function(index){
-		console.log($(this).attr("data-firstname") );
-		if(query.includes($(this).attr("data-firstname"))) {
-			$(this).addClass("mark");
-			notFound = false;
-		}
-		if(query.includes($(this).attr("data-lastname"))) {
-			$(this).addClass("mark");
-			notFound = false;
-		}
-	
-	});
-	if (notFound){
-		$("#alertZone").append(alertthing);
-		alertthing.alert();
-	}
-});
-$("#clearsearch").on("click",function(e){
-	e.preventDefault();
-	alertthing.alert('close');
-	$(".child").each(function(index){
-		$(this).removeClass("mark")
-	});
-});
-{{/if}}
-	</script>
+    		var alertthing=$("<div>").addClass("alert alert-danger").attr("role","alert").text("child not found");
+    alertthing.alert("close");
+    {{#if children}}
+    $("#childSearch").on("submit",function(e){
+    	alertthing.alert("close");
+    	e.preventDefault();
+    	$('.alert').alert();
+    	$(".child").each(function(index){
+    		$(this).removeClass("mark")
+    	});
+    	var query=$("#searchquery").val().trim();
+    	console.log(query);
+    	var notFound = true;
+    	$(".child").each(function(index){
+    		console.log($(this).attr("data-firstname") );
+    		if(query.includes($(this).attr("data-firstname"))) {
+    			$(this).addClass("mark");
+    			notFound = false;
+    		}
+    		if(query.includes($(this).attr("data-lastname"))) {
+    			$(this).addClass("mark");
+    			notFound = false;
+    		}
+
+    	});
+    	if (notFound){
+    		$("#alertZone").append(alertthing);
+    		alertthing.alert();
+    	}
+    });
+    $("#clearsearch").on("click",function(e){
+    	e.preventDefault();
+    	alertthing.alert('close');
+    	$(".child").each(function(index){
+    		$(this).removeClass("mark")
+    	});
+    });
+    {{/if}}
+  </script>
 </body>
