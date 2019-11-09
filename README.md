@@ -34,20 +34,28 @@ $ node server
 ```
 ## Screenshots
 ### App Views
-![Home Route (week view)](reference/weekviewshot.png?raw=true "Home Route weekview")
-![Child Profile](reference/childprofileshot.png?raw=true "Child Profile")
+<img src="reference/weekviewshot.png" width="500">
+<img src="reference/childprofileshot.png" width="500">
+
 ### Form Views
-![Parent Form](reference/parentform.png?raw=true "Parent Form")
-![Child Form](reference/childform.png?raw=true "Child Form")
-![Schedule Form](reference/scheduleform.png?raw=true "Schedule Form")
+
+<img src="reference/parentform.png" width="500">
+<img src="reference/childform.png" width="500">
+<img src="reference/scheduleform.png" width="500">
+
 ### Api Views
-![Children API](reference/childrenapi.png?raw=true "Children API")
-![Parent API](reference/parentapi.png?raw=true "Parent API")
+
+<img src="reference/childrenapi.png" width="500">
+<img src="reference/parentapi.png" width="500">
 
 
 ## Reference
-Website Schema
-![Site Schema](reference/websiteSchema.png?raw=true "Website Schema")
-Mockups
-![Child Profile](reference/childProfile.png?raw=true "Child Profile")
-![Week View](reference/weekView.png?raw=true "Week View")
+### Website Schema
+
+<img src="reference/websiteSchema.png" width="250">
+
+### Mockups
+
+<img src="reference/childProfile.png?" width="250">
+<img src="reference/weekView.png" width="250">
+
